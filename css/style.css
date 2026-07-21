@@ -1,0 +1,520 @@
+/* =========================================================
+   1. RESET
+   Basic reset so every browser starts from the same baseline
+   ========================================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  background-color: #FFFFFF;
+  color: #222222;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 24px;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+/* =========================================================
+   2. NAVIGATION
+   Sticky top navbar. Turns into a hamburger menu on mobile.
+   ========================================================= */
+.navbar {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #E5E5E5;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #222222;
+}
+
+.logo span {
+  color: #2563EB;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-links a {
+  font-weight: 500;
+  color: #222222;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #2563EB;
+  border-bottom: 2px solid #2563EB;
+}
+
+/* Hamburger button - hidden on desktop, shown on mobile below */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburger span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: #222222;
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Class toggled by js/script.js when the menu is open */
+.hamburger.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* =========================================================
+   3. HERO
+   ========================================================= */
+.hero {
+  background-color: #F5F5F5;
+  padding: 80px 24px;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  margin-bottom: 8px;
+}
+
+.hero .highlight {
+  color: #2563EB;
+}
+
+.hero h2 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #444444;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  margin-bottom: 28px;
+  color: #444444;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.page-header {
+  background-color: #F5F5F5;
+  padding: 48px 24px;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: 2rem;
+}
+
+/* =========================================================
+   4. CARDS
+   Reusable card style used for skills, projects, and forms
+   ========================================================= */
+.card {
+  background-color: #F5F5F5;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.skill-card {
+  background-color: #F5F5F5;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.project-img {
+  border-radius: 6px;
+  background-color: #E5E5E5;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.tech-stack {
+  font-size: 0.9rem;
+  color: #555555;
+}
+
+.card-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.education-card {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.education-meta {
+  color: #555555;
+  font-size: 0.95rem;
+  margin: 6px 0 12px;
+}
+
+.goals-list {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.goals-list li {
+  background-color: #F5F5F5;
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+}
+
+.goals-list li::before {
+  content: "\2192  ";
+  color: #2563EB;
+  font-weight: 600;
+}
+
+/* Progress bars on the About page */
+.progress-list {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.progress-item {
+  margin-bottom: 20px;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.progress-bar {
+  background-color: #E5E5E5;
+  border-radius: 6px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  background-color: #2563EB;
+  height: 100%;
+  border-radius: 6px;
+}
+
+.resume-section {
+  text-align: center;
+}
+
+/* Contact page */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 32px;
+}
+
+.contact-form {
+  background-color: #F5F5F5;
+  border-radius: 8px;
+  padding: 28px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #CCCCCC;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  background-color: #FFFFFF;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: 2px solid #2563EB;
+  outline-offset: 1px;
+}
+
+.form-status {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  color: #2563EB;
+}
+
+.contact-info {
+  background-color: #F5F5F5;
+  border-radius: 8px;
+  padding: 28px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.contact-info h3 {
+  margin-bottom: 14px;
+}
+
+.contact-links li {
+  margin-bottom: 10px;
+}
+
+.contact-links a {
+  color: #2563EB;
+  font-weight: 500;
+}
+
+/* =========================================================
+   5. BUTTONS
+   ========================================================= */
+.btn {
+  display: inline-block;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-weight: 500;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-primary {
+  background-color: #2563EB;
+  color: #FFFFFF;
+}
+
+.btn-primary:hover {
+  background-color: #1D4ED8;
+}
+
+.btn-secondary {
+  background-color: #FFFFFF;
+  color: #2563EB;
+  border-color: #2563EB;
+}
+
+.btn-secondary:hover {
+  background-color: #2563EB;
+  color: #FFFFFF;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #2563EB;
+  border-color: #2563EB;
+  padding: 8px 18px;
+  font-size: 0.95rem;
+}
+
+.btn-outline:hover {
+  background-color: #2563EB;
+  color: #FFFFFF;
+}
+
+/* =========================================================
+   6. FOOTER
+   ========================================================= */
+.footer {
+  background-color: #F5F5F5;
+  padding: 32px 24px;
+  text-align: center;
+  border-top: 1px solid #E5E5E5;
+}
+
+.footer p {
+  margin-bottom: 12px;
+  color: #444444;
+}
+
+.footer-links,
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.footer-links a:hover,
+.footer-social a:hover {
+  color: #2563EB;
+}
+
+/* =========================================================
+   7. RESPONSIVE MEDIA QUERIES
+   ========================================================= */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #FFFFFF;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    border-bottom: 1px solid #E5E5E5;
+
+    /* Hidden by default, shown by JS toggling .show */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease;
+  }
+
+  .nav-links.show {
+    max-height: 300px;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 14px 0;
+    border-bottom: none;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero h2 {
+    font-size: 1.1rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}

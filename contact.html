@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Abhishek Kamble</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">Abhishek<span>.dev</span></a>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== PAGE HEADER ===== -->
+  <section class="page-header">
+    <h1>Get In Touch</h1>
+  </section>
+
+  <!-- ===== CONTACT FORM ===== -->
+  <section class="section contact-section">
+    <div class="contact-grid">
+
+      <!--
+        Note for Abhishek: this form doesn't actually send an email yet.
+        To make it work, you'd hook it up to something like Formspree,
+        EmailJS, or a small backend. For now it just prevents the page
+        from reloading (see js/script.js).
+      -->
+      <form class="contact-form" id="contactForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your full name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Send</button>
+        <p class="form-status" id="formStatus"></p>
+      </form>
+
+      <div class="contact-info">
+        <h3>Other Ways to Reach Me</h3>
+        <ul class="contact-links">
+          <!-- TODO: replace # and email with your real details -->
+          <li><a href="#" target="_blank" rel="noopener">GitHub &rarr;</a></li>
+          <li><a href="#" target="_blank" rel="noopener">LinkedIn &rarr;</a></li>
+          <li><a href="mailto:youremail@example.com">youremail@example.com</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>&copy; 2026 Abhishek Kamble</p>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <ul class="footer-social">
+      <li><a href="#" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="mailto:youremail@example.com">Email</a></li>
+    </ul>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
